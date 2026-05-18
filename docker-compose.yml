@@ -1,0 +1,31 @@
+version: '3.9'
+services:
+  stitch:
+    build: .
+    container_name: stitch-sovereign-runtime
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+    environment:
+      NODE_ENV: production
+      PORT: 3000
+      STITCH_LOCAL_MODEL: llama3.2
+      STITCH_DAEMON_INTERVAL_MS: 180000
+      OLLAMA_HOST: http://ollama:11434
+    volumes:
+      - stitch_data:/data/stitch-vault
+    depends_on:
+      - ollama
+
+  ollama:
+    image: ollama/ollama:latest
+    container_name: stitch-ollama
+    restart: unless-stopped
+    ports:
+      - "11434:11434"
+    volumes:
+      - ollama_data:/root/.ollama
+
+volumes:
+  stitch_data:
+  ollama_data:
