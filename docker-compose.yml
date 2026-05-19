@@ -1,0 +1,21 @@
+services:
+  sb688-web:
+    image: nginx:alpine
+    container_name: sb688-public-web
+    ports:
+      - "8088:80"
+    volumes:
+      - ./:/usr/share/nginx/html:ro
+    environment:
+      - JGA_PUBLIC_DOMAIN=https://jgaos2026-gif.com
+    restart: unless-stopped
+
+  sb688-dev-shell:
+    image: node:22-alpine
+    container_name: sb688-dev-shell
+    working_dir: /workspace
+    volumes:
+      - ./:/workspace
+    command: sh -c "echo SB688 dev shell ready && tail -f /dev/null"
+    environment:
+      - SB688_MODE=local_dev
