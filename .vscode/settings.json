@@ -1,0 +1,15 @@
+{
+  "files.exclude": {
+    "**/.env": true,
+    "**/node_modules": true,
+    "**/.supabase": true
+  },
+  "search.exclude": {
+    "**/.env": true,
+    "**/node_modules": true,
+    "**/.supabase": true
+  },
+  "editor.formatOnSave": true,
+  "markdown.preview.openMarkdownLinks": "inPreview",
+  "terminal.integrated.defaultProfile.windows": "PowerShell"
+}
