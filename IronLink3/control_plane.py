@@ -38,6 +38,7 @@ class Module:
 DEFAULT_MODULES = (
     Module("sb688", "SB-688 Truth Gate", "verification", "VERA", "external"),
     Module("sb689", "SB-689 Recovery Ledger", "recovery", "VERA", "external"),
+    Module("sb699", "SB-699 Braided Recovery", "recovery", "VERA", "local", "healthy"),
     Module("sb701", "SB-701 Heartbeat", "coordination", "AVA", "external"),
     Module("sb712", "SB-712 Kernel", "kernel", "AVA", "external"),
     Module("oasis", "OASIS Platform", "operations", "AVA", "external"),
