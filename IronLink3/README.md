@@ -2,6 +2,11 @@
 
 One owner-facing control plane for the Stitch Brick technology family.
 
+SB-699 is attached as the local braided recovery service under `../SB699` in
+the repository. The control plane registers it as local and healthy only after
+its own verification tests pass; applying a captured setback to an external
+workload remains an explicit operator/integration responsibility.
+
 This build is deliberately fail-closed. It does **not** claim that IronLink3 is
 connected until a real HTTPS endpoint and owner token are configured and a
 signed handshake succeeds.
