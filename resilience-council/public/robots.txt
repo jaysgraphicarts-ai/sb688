@@ -1,0 +1,11 @@
+User-agent: *
+Allow: /
+Disallow: /app/
+Disallow: /admin/
+Disallow: /account/
+Disallow: /incidents/
+Disallow: /decisions/
+Disallow: /login
+
+# Replace with the production canonical hostname before deployment.
+Sitemap: https://example.com/sitemap.xml
