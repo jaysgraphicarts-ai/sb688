@@ -9,7 +9,10 @@ from control_plane import AuditLedger, ControlPlane, NonceGuard, secure_token_co
 
 class ControlPlaneTests(unittest.TestCase):
     def test_initial_verification_passes(self):
-        self.assertTrue(ControlPlane().verify()["passed"])
+        plane = ControlPlane()
+        self.assertTrue(plane.verify()["passed"])
+        self.assertEqual(plane.modules["sb699"].integration, "local")
+        self.assertEqual(plane.modules["sb699"].health, "healthy")
 
     def test_checkpoint_requires_and_records_verification(self):
         plane = ControlPlane()
